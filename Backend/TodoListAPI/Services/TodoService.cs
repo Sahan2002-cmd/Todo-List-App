@@ -1,4 +1,4 @@
-using TodoListAPI.Models;
+﻿using TodoListAPI.Models;
 using TodoListAPI.Models.DTOs;
 using TodoListAPI.Repositories.Interfaces;
 using TodoListAPI.Services.Interfaces;
@@ -42,7 +42,6 @@ namespace TodoListAPI.Services
             if (existingTodo == null)
                 return null;
 
-            // Update only provided fields
             if (!string.IsNullOrEmpty(updateTodoDto.Title))
                 existingTodo.Title = updateTodoDto.Title;
 

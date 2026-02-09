@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TodoListAPI.Models;
 
 namespace TodoListAPI.Data
@@ -15,7 +15,6 @@ namespace TodoListAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure TodoItem
             modelBuilder.Entity<TodoItem>(entity =>
             {
                 entity.HasKey(e => e.Id);

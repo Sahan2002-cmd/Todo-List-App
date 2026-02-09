@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TodoListAPI.Models.DTOs;
 using TodoListAPI.Services.Interfaces;
 
@@ -15,7 +15,6 @@ namespace TodoListAPI.Controllers
             _todoService = todoService;
         }
 
-        // GET: api/todo
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] bool? isCompleted)
         {
@@ -29,7 +28,6 @@ namespace TodoListAPI.Controllers
             return Ok(todos);
         }
 
-        // GET: api/todo/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -40,7 +38,6 @@ namespace TodoListAPI.Controllers
             return Ok(todo);
         }
 
-        // POST: api/todo
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateTodoDto createTodoDto)
         {
@@ -51,7 +48,6 @@ namespace TodoListAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = createdTodo.Id }, createdTodo);
         }
 
-        // PUT: api/todo/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateTodoDto updateTodoDto)
         {
@@ -65,7 +61,6 @@ namespace TodoListAPI.Controllers
             return Ok(updatedTodo);
         }
 
-        // DELETE: api/todo/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
